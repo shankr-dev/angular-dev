@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
   imports: []
 })
 export class UserComponent {
-  @Input() name: string = 'John Doe';
-  @Input() email: string = 'john.doe@example.com';
-  @Input() isOnline: boolean = true;
+  @Input({required: true}) name!: string;
+  @Input({required: true}) email!: string;
+  @Input({required: true}) isOnline: boolean = false;
 }

@@ -17,10 +17,9 @@
   <!-- User List-->
   <div class="flex-1 p-6 space-y-4 overflow-y-auto">
     <app-user 
-      *ngFor="let user of users" 
-      [name]="user.name" 
-      [email]="user.email" 
-      [isOnline]="user.isOnline">
+      [name]="user[0].name" 
+      [email]="user[0].email" 
+      [isOnline]="user[0].isOnline">
     </app-user>
   </div>
 
