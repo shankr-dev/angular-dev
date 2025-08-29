@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -7,7 +7,11 @@ import { Component, Input } from '@angular/core';
   imports: []
 })
 export class UserComponent {
-  @Input({required: true}) name!: string;
-  @Input({required: true}) email!: string;
-  @Input({required: true}) isOnline: boolean = false;
+  // @Input({required: true}) name!: string;
+  // @Input({required: true}) email!: string;
+  // @Input({required: true}) isOnline: boolean = false;
+
+  name = input.required<string>();
+  email = input.required<string>();
+  isOnline = input.required<boolean>();
 }
