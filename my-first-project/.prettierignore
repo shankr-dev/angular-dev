@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+dist/
+build/
+
+# Angular
+.angular/
+
+# Generated files
+*.min.js
+*.min.css
+
+# Package files
+package-lock.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/

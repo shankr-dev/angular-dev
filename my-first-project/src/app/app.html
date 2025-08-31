@@ -1,9 +1,8 @@
 <div class="flex flex-col h-screen">
-  <app-header/>
-  <div class="flex flex-1">
-    <app-sidebar/>
-    <main class="flex-1 p-6">
-      <!-- Main content area -->
-    </main>
+  <app-header />
+  <!-- Main Container for Left and Right Sidebars -->
+  <div class="flex flex-row flex-1 overflow-hidden w-full h-full min-h-0">
+    <app-sidebar (userSelected)="onUserSelect($event)" />
+    <app-right-sidebar [selectedUserId]="selectedUserId" />
   </div>
 </div>
