@@ -4,7 +4,7 @@ import { TaskComponent } from '../task/task';
 import { User } from '../user/user';
 
 @Component({
-  selector: 'app-right-left-sidebar',
+  selector: 'app-right-sidebar',
   templateUrl: './right-sidebar.html',
   standalone: true,
   imports: [CommonModule, TaskComponent],
