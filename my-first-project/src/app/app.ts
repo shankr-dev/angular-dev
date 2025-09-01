@@ -15,7 +15,7 @@ import { User } from './user/user';
 export class AppComponent {
   selectedUser?: User;
 
-  onUserSelect = (user : User) =>{
+  onUserSelect = (user: User) => {
     this.selectedUser = user;
-  }
+  };
 }

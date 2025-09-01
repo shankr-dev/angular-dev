@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { DUMMY_USERS } from '../../dummy-user';
 import { TaskComponent } from '../task/task';
 import { User } from '../user/user';
 

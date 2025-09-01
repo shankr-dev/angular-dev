@@ -3,6 +3,8 @@
   <!-- Main Container for Left and Right Sidebars -->
   <div class="flex flex-row flex-1 overflow-hidden w-full h-full min-h-0">
     <app-sidebar (userSelected)="onUserSelect($event)" />
-    <app-right-sidebar [selectedUser]="selectedUser" />
+    <div class="flex-1 min-w-0">
+      <app-right-sidebar [selectedUser]="selectedUser" />
+    </div>
   </div>
 </div>
