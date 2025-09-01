@@ -17,14 +17,14 @@
       <!-- Status Indicator -->
       <div
         class="absolute -bottom-0 -right-0 w-2 h-2 rounded-full border-1 border-white"
-        [class]="isOnline ? 'bg-emerald-500' : 'bg-gray-400'"
+        [class]="user.isOnline ? 'bg-emerald-500' : 'bg-gray-400'"
       ></div>
     </div>
 
     <!-- User Info -->
     <div class="flex-1 min-w-0">
-      <h3 class="text-md font-medium text-gray-900 truncate leading-tight">{{ name }}</h3>
-      <p class="text-sm text-gray-500 mt-1 leading-tight">{{ email }}</p>
+      <h3 class="text-md font-medium text-gray-900 truncate leading-tight">{{ user.name }}</h3>
+      <p class="text-sm text-gray-500 mt-1 leading-tight">{{ user.email }}</p>
     </div>
   </div>
 </div>

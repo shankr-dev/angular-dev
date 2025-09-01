@@ -24,38 +24,9 @@
 
   <!-- User List-->
   <div class="flex-1 p-6 space-y-4 overflow-y-auto">
-    <app-user
-      [id]="user[0].id"
-      [name]="user[0].name"
-      [email]="user[0].email"
-      [isOnline]="user[0].isOnline"
-      (select)="onClickUser($event)"
-    >
-    </app-user>
-    <app-user
-      [id]="user[1].id"
-      [name]="user[1].name"
-      [email]="user[1].email"
-      [isOnline]="user[1].isOnline"
-      (select)="onClickUser($event)"
-    >
-    </app-user>
-    <app-user
-      [id]="user[2].id"
-      [name]="user[2].name"
-      [email]="user[2].email"
-      [isOnline]="user[2].isOnline"
-      (select)="onClickUser($event)"
-    >
-    </app-user>
-    <app-user
-      [id]="user[3].id"
-      [name]="user[3].name"
-      [email]="user[3].email"
-      [isOnline]="user[3].isOnline"
-      (select)="onClickUser($event)"
-    >
-    </app-user>
+    @for (user of users; track user.id) {
+      <app-user [user]="user" (select)="onClickUser($event)"/>
+    }
   </div>
 
   <!-- Add User Button at Bottom -->

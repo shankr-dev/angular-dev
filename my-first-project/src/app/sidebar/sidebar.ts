@@ -10,7 +10,7 @@ import { UserComponent } from '../user/user';
   imports: [CommonModule, UserComponent],
 })
 export class SidebarComponent {
-  user = DUMMY_USERS;
+  users = DUMMY_USERS;
 
   @Output() userSelected = new EventEmitter<number>();
 

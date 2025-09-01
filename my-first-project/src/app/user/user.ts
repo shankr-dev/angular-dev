@@ -1,5 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
+export type User = {
+  id: number;
+  name: string;
+  email: string;
+  isOnline: boolean;
+};
+
 @Component({
   selector: 'app-user',
   templateUrl: './user.html',
@@ -7,14 +14,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   imports: [],
 })
 export class UserComponent {
-  @Input({ required: true }) id!: number;
-  @Input({ required: true }) name!: string;
-  @Input({ required: true }) email!: string;
-  @Input({ required: true }) isOnline: boolean = false;
+  @Input({ required: true }) user!: User;
 
   @Output() select = new EventEmitter<number>();
 
   onUserCLick = () => {
-    this.select.emit(this.id);
+    this.select.emit(this.user.id);
   };
 }
