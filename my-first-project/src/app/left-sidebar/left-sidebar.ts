@@ -4,7 +4,7 @@ import { DUMMY_USERS } from '../../dummy-user';
 import { User, UserComponent } from '../user/user';
 
 @Component({
-  selector: 'app-sidebar',
+  selector: 'app-left-sidebar',
   templateUrl: './sidebar.html',
   standalone: true,
   imports: [CommonModule, UserComponent],
