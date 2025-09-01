@@ -1,3 +1,10 @@
+export interface User {
+  id: number;
+  name: string;
+  email: string;
+  isOnline: boolean;
+}
+
 export const DUMMY_USERS = [
   { id: 1, name: 'Alice Johnson', email: 'alice.johnson@example.com', isOnline: true },
   { id: 2, name: 'Bob Smith', email: 'bob.smith@example.com', isOnline: false },

@@ -1,18 +1,35 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { TaskComponent } from '../task/task';
-import { User } from '../user/user';
+import { DUMMY_TASKS, Task } from '../../dummy-tasks';
+import { User } from '../../dummy-user';
+import { TasksComponent } from './tasks/tasks';
 
 @Component({
   selector: 'app-right-sidebar',
   templateUrl: './right-sidebar.html',
   standalone: true,
-  imports: [CommonModule, TaskComponent],
+  imports: [CommonModule, TasksComponent],
 })
 export class RightSidebarComponent {
   @Input() selectedUser?: User;
 
   get user() {
     return this.selectedUser;
+  }
+
+  get userTasks(): Task[] {
+    return DUMMY_TASKS.filter((task: Task) => task.userId === this.selectedUser?.id);
+  }
+
+  get totalTasks(): number {
+    return this.userTasks.length;
+  }
+
+  get completedTasks(): number {
+    return this.userTasks.filter((task) => task.isCompleted).length;
+  }
+
+  get pendingTasks(): number {
+    return this.userTasks.filter((task) => !task.isCompleted).length;
   }
 }

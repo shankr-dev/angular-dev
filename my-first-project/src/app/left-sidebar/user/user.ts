@@ -1,11 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { User } from '../../../dummy-user';
 
-export type User = {
-  id: number;
-  name: string;
-  email: string;
-  isOnline: boolean;
-};
 
 @Component({
   selector: 'app-user',
