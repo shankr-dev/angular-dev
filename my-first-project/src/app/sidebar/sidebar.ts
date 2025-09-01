@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { DUMMY_USERS } from '../../dummy-user';
-import { UserComponent } from '../user/user';
+import { User, UserComponent } from '../user/user';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,10 +12,10 @@ import { UserComponent } from '../user/user';
 export class SidebarComponent {
   users = DUMMY_USERS;
 
-  @Output() userSelected = new EventEmitter<number>();
+  @Output() userSelected = new EventEmitter<User>();
 
-  onClickUser = (id: number) => {
-    console.log(`User selected: ${id}`);
-    this.userSelected.emit(id);
+  onClickUser = (user: User) => {
+    console.log(`User selected: ${user.id}`);
+    this.userSelected.emit(user);
   };
 }

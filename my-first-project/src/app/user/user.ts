@@ -16,9 +16,9 @@ export type User = {
 export class UserComponent {
   @Input({ required: true }) user!: User;
 
-  @Output() select = new EventEmitter<number>();
+  @Output() select = new EventEmitter<User>();
 
   onUserCLick = () => {
-    this.select.emit(this.user.id);
+    this.select.emit(this.user);
   };
 }

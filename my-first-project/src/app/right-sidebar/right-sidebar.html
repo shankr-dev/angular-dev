@@ -3,29 +3,29 @@
 >
   <!-- User Details Section -->
   <div class="p-6 border-b border-gray-100 bg-gradient-to-r from-blue-50 to-indigo-50">
-    <div *ngIf="user; else noUserSelected" class="flex items-center space-x-4">
-      <div
-        class="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-2xl font-bold"
-      >
-        {{ user.name.charAt(0) }}{{ user.name.split(' ')[1].charAt(0) || '' }}
-      </div>
-      <div class="flex-1">
-        <h2 class="text-xl font-bold text-gray-900">{{ user.name }}</h2>
-        <p class="text-gray-600">{{ user.email }}</p>
-        <div class="flex items-center mt-2">
-          <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-          <span class="text-sm text-green-600 font-medium">{{
-            user.isOnline ? 'Online' : 'Offline'
-          }}</span>
+    @if (user) {
+      <div class="flex items-center space-x-4">
+        <div
+          class="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-2xl font-bold"
+        >
+          {{ user.name.charAt(0) }}{{ user.name.split(' ')[1].charAt(0) || '' }}
+        </div>
+        <div class="flex-1">
+          <h2 class="text-xl font-bold text-gray-900">{{ user.name }}</h2>
+          <p class="text-gray-600">{{ user.email }}</p>
+          <div class="flex items-center mt-2">
+            <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+            <span class="text-sm text-green-600 font-medium">{{
+              user.isOnline ? 'Online' : 'Offline'
+            }}</span>
+          </div>
+        </div>
+        <div class="text-right">
+          <p class="text-sm text-gray-500">Last active</p>
+          <p class="text-sm font-medium text-gray-900">2 hours ago</p>
         </div>
       </div>
-      <div class="text-right">
-        <p class="text-sm text-gray-500">Last active</p>
-        <p class="text-sm font-medium text-gray-900">2 hours ago</p>
-      </div>
-    </div>
-
-    <ng-template #noUserSelected>
+    } @else {
       <div class="text-center py-8">
         <div
           class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-4"
@@ -42,7 +42,7 @@
         <h2 class="text-xl font-semibold text-gray-600 mb-2">No User Selected</h2>
         <p class="text-gray-500">Click on a user from the left sidebar to view details</p>
       </div>
-    </ng-template>
+    }
   </div>
 
   <!-- Tasks Section -->
