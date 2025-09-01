@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Task } from '../../../../dummy-tasks';
+import { Task } from '../../../model/task.model';
 
 @Component({
   selector: 'app-task',
@@ -9,7 +9,7 @@ import { Task } from '../../../../dummy-tasks';
   imports: [CommonModule],
 })
 export class TaskComponent {
-  @Input() task!: Task;
+  @Input({ required: true }) task!: Task;
 
   getPriorityColor(priority: string): string {
     switch (priority) {

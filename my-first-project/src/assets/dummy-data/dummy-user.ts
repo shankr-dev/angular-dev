@@ -1,11 +1,6 @@
-export interface User {
-  id: number;
-  name: string;
-  email: string;
-  isOnline: boolean;
-}
+import { User } from '../../app/model/user.model';
 
-export const DUMMY_USERS = [
+export const DUMMY_USERS: User[] = [
   { id: 1, name: 'Alice Johnson', email: 'alice.johnson@example.com', isOnline: true },
   { id: 2, name: 'Bob Smith', email: 'bob.smith@example.com', isOnline: false },
   { id: 3, name: 'Charlie Brown', email: 'charlie.brown@example.com', isOnline: true },

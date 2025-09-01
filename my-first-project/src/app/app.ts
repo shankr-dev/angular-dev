@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header';
 import { LeftSidebarComponent } from './left-sidebar/left-sidebar';
 import { RightSidebarComponent } from './right-sidebar/right-sidebar';
-import { User } from '../dummy-user';
+import { User } from './model/user.model';
 
 @Component({
   selector: 'app-root',

@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
-import { DUMMY_USERS, User } from '../../dummy-user';
+import { DUMMY_USERS } from '../../assets/dummy-data/dummy-user';
 import { UserComponent } from './user/user';
+import { User } from '../model/user.model';
 
 @Component({
   selector: 'app-left-sidebar',

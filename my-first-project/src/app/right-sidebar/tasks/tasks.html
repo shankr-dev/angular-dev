@@ -11,9 +11,9 @@
   <!-- Task List -->
   <div class="flex-1 overflow-y-auto p-4">
     @if (selectedUser) {
-      @if (userTasks && userTasks.length > 0) {
+      @if (tasks && tasks.length > 0) {
         <div>
-          @for (task of userTasks; track task.id; let last = $last) {
+          @for (task of tasks; track task.id; let last = $last) {
             <div [class]="last ? '' : 'mb-3'">
               <app-task [task]="task"></app-task>
             </div>
