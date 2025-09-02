@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Task } from '../../../model/task.model';
+import { type Task } from '../../../model/task.model';
 
 @Component({
   selector: 'app-task',

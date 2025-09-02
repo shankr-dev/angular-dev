@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DUMMY_USERS } from '../../assets/dummy-data/dummy-user';
+import { type User } from '../model/user.model';
 import { UserComponent } from './user/user';
-import { User } from '../model/user.model';
 
 @Component({
   selector: 'app-left-sidebar',
@@ -13,6 +13,7 @@ import { User } from '../model/user.model';
 export class LeftSidebarComponent {
   users = DUMMY_USERS;
 
+  @Input() selectedUser?: User;
   @Output() userSelected = new EventEmitter<User>();
 
   onClickUser = (user: User) => {

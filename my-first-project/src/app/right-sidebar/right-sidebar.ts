@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { DUMMY_TASKS } from '../../assets/dummy-data/dummy-tasks';
 import { TasksComponent } from './tasks/tasks';
-import { Task } from '../model/task.model';
-import { User } from '../model/user.model';
+import { type Task } from '../model/task.model';
+import { type User } from '../model/user.model';
 
 @Component({
   selector: 'app-right-sidebar',

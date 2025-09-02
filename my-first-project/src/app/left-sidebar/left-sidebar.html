@@ -23,9 +23,13 @@
   </div>
 
   <!-- User List-->
-  <div class="flex-1 p-4 space-y-3 overflow-y-auto bg-white">
+  <div class="flex-1 p-4 space-y-3 overflow-y-auto bg-white scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent hover:scrollbar-thumb-gray-400 transition-colors duration-200">
     @for (user of users; track user.id) {
-      <app-user [user]="user" (select)="onClickUser($event)" />
+      <app-user
+        [user]="user"
+        [isSelected]="selectedUser?.id === user.id"
+        (select)="onClickUser($event)"
+      />
     }
   </div>
 
