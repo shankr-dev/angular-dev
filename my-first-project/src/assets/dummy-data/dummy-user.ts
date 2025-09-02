@@ -1,4 +1,4 @@
-import { User } from '../../app/model/user.model';
+import { User } from '../../model/user.model';
 
 export const DUMMY_USERS: User[] = [
   { id: 1, name: 'Alice Johnson', email: 'alice.johnson@example.com', isOnline: true },

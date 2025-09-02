@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { HeaderComponent } from './header/header';
-import { LeftSidebarComponent } from './left-sidebar/left-sidebar';
-import { type User } from './model/user.model';
-import { RightSidebarComponent } from './right-sidebar/right-sidebar';
+import { HeaderComponent } from './component/header/header';
+import { LeftSidebarComponent } from './component/left-sidebar/left-sidebar';
+import { type User } from '../model/user.model';
+import { RightSidebarComponent } from './component/right-sidebar/right-sidebar';
 
 @Component({
   selector: 'app-root',

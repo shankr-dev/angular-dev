@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { DUMMY_USERS } from '../../assets/dummy-data/dummy-user';
-import { type User } from '../model/user.model';
+import { DUMMY_USERS } from '../../../assets/dummy-data/dummy-user';
+import { type User } from '../../../model/user.model';
 import { UserComponent } from './user/user';
 
 @Component({

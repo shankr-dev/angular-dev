@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { type Task } from '../../model/task.model';
-import { type User } from '../../model/user.model';
+import { type Task } from '../../../../model/task.model';
+import { type User } from '../../../../model/user.model';
 import { TaskComponent } from './task/task';
+import { TaskService } from '../../../../service/TaskService';
 
 @Component({
   selector: 'app-tasks',
@@ -14,7 +15,17 @@ export class TasksComponent {
   @Input() userTasks?: Task[];
   @Input() selectedUser?: User;
 
+  constructor(private taskService: TaskService) {}
+
   get tasks() {
     return this.userTasks;
+  }
+
+  onTaskCompleted(task: Task) {
+    this.taskService.updateTaskStatus(task.id, true)
+  }
+
+  onTaskCanceled(task: Task) {
+    this.taskService.updateTaskStatus(task.id, false)
   }
 }

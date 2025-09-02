@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { type Task } from '../../../model/task.model';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { type Task } from '../../../../../model/task.model';
 
 @Component({
   selector: 'app-task',
@@ -10,6 +10,16 @@ import { type Task } from '../../../model/task.model';
 })
 export class TaskComponent {
   @Input({ required: true }) task!: Task;
+  @Output() taskComplete = new EventEmitter<Task>();
+  @Output() taskCancel = new EventEmitter<Task>();
+
+  completeTask(): void {
+    this.taskComplete.emit(this.task);
+  }
+
+  cancelTask(): void {
+    this.taskCancel.emit(this.task);
+  }
 
   getPriorityColor(priority: string): string {
     switch (priority) {

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { type User } from '../../model/user.model';
+import { type User } from '../../../../model/user.model';
 
 @Component({
   selector: 'app-user',

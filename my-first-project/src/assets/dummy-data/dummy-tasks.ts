@@ -1,4 +1,4 @@
-import { type Task } from '../../app/model/task.model';
+import { type Task } from '../../model/task.model';
 
 export const DUMMY_TASKS: Task[] = [
   // User 1 - Alice Johnson (3 tasks)
