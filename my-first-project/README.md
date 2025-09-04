@@ -1,59 +1,98 @@
-# MyFirstApp
+# Task Management App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.1.
+A modern task management application built with Angular 20, featuring user selection and task organization capabilities.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- **User Management**: Select users from a sidebar to view their tasks
+- **Task Operations**: Add, complete, and cancel tasks
+- **Priority System**: Organize tasks by High, Medium, and Low priority
+- **Task Details**: Track title, description, due date, and estimated hours
+- **Responsive Design**: Built with Tailwind CSS for modern UI
 
+## Tech Stack
+
+- **Angular 20** with standalone components
+- **TypeScript** for type safety
+- **Tailwind CSS 4.x** for styling
+- **Prettier** for code formatting
+- **Karma + Jasmine** for testing
+
+## Development
+
+### Start Development Server
 ```bash
+npm start
+# or
 ng serve
 ```
+Navigate to `http://localhost:4200/` - the app will auto-reload on changes.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+### Code Formatting
 ```bash
-ng generate component component-name
+npm run format          # Format all code
+npm run format:check    # Check formatting
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+### Testing
 ```bash
-ng generate --help
+npm test               # Run unit tests
+ng test               # Alternative test command
 ```
 
-## Building
-
-To build the project run:
-
+### Building
 ```bash
-ng build
+npm run build         # Production build
+ng build             # Alternative build command
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+### Code Generation
 ```bash
-ng test
+ng generate component component-name    # Generate component
+ng generate --help                     # See all options
 ```
 
-## Running end-to-end tests
+## Project Structure
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
+```
+src/
+├── app/
+│   ├── component/
+│   │   ├── header/           # App header
+│   │   ├── left-sidebar/     # User selection
+│   │   ├── right-sidebar/    # Task management
+│   │   └── add-task/         # Task creation form
+│   └── app.ts               # Root component
+├── model/
+│   ├── user.model.ts        # User interface
+│   └── task.model.ts        # Task interface
+└── assets/
+    └── dummy-data/          # Development data
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Data Models
 
-## Additional Resources
+### User
+```typescript
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  isOnline: boolean;
+}
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Task
+```typescript
+interface Task {
+  id: number;
+  userId: number;
+  work: string;
+  priority: 'High' | 'Medium' | 'Low';
+  title: string;
+  description: string;
+  dueDate: string;
+  estimatedHours: number;
+  isCompleted: boolean;
+}
+```
