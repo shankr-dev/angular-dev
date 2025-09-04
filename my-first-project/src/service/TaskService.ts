@@ -20,6 +20,10 @@ export class TaskService {
     return this.tasks.filter((task) => task.userId === userId);
   }
 
+  addTask(task: Task): void {
+    this.tasks.push(task);
+  }
+
   updateTaskStatus(taskId: number, isCompleted: boolean): void {
     const taskIndex = this.tasks.findIndex((task) => task.id === taskId);
     if (taskIndex !== -1) {
