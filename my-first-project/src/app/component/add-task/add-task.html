@@ -8,10 +8,10 @@
         <div class="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center">
           <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
+              d="M12 4v16m8-8H4"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M12 4v16m8-8H4"
             ></path>
           </svg>
         </div>
@@ -25,7 +25,7 @@
         class="w-8 h-8 rounded-lg hover:bg-gray-100 flex items-center justify-center transition-colors duration-200 text-gray-500 hover:text-gray-700"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
         </svg>
       </button>
     </div>
@@ -34,33 +34,33 @@
     <form (ngSubmit)="onSubmit()" class="p-6 space-y-6">
       <!-- Task Title -->
       <div>
-        <label for="title" class="block text-sm font-semibold text-gray-900 mb-2">
+        <label class="block text-sm font-semibold text-gray-900 mb-2" for="title">
           Task Title <span class="text-red-500">*</span>
         </label>
         <input
-          type="text"
-          id="title"
           [(ngModel)]="taskForm.title"
-          name="title"
-          required
-          placeholder="Enter task title..."
           class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition-all duration-200 text-sm bg-gray-50 hover:bg-white focus:bg-white"
+          id="title"
+          name="title"
+          placeholder="Enter task title..."
+          required
+          type="text"
         />
       </div>
 
       <!-- Task Description -->
       <div>
-        <label for="description" class="block text-sm font-semibold text-gray-900 mb-2">
+        <label class="block text-sm font-semibold text-gray-900 mb-2" for="description">
           Description <span class="text-red-500">*</span>
         </label>
         <textarea
-          id="description"
           [(ngModel)]="taskForm.description"
+          class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition-all duration-200 text-sm bg-gray-50 hover:bg-white focus:bg-white resize-none"
+          id="description"
           name="description"
+          placeholder="Describe the task in detail..."
           required
           rows="4"
-          placeholder="Describe the task in detail..."
-          class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition-all duration-200 text-sm bg-gray-50 hover:bg-white focus:bg-white resize-none"
         ></textarea>
       </div>
 
@@ -68,35 +68,35 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Work Category -->
         <div>
-          <label for="work" class="block text-sm font-semibold text-gray-900 mb-2">
+          <label class="block text-sm font-semibold text-gray-900 mb-2" for="work">
             Work Category <span class="text-red-500">*</span>
           </label>
           <input
-            type="text"
-            id="work"
             [(ngModel)]="taskForm.work"
-            name="work"
-            required
-            placeholder="e.g., Development, Design, Testing..."
             class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition-all duration-200 text-sm bg-gray-50 hover:bg-white focus:bg-white"
+            id="work"
+            name="work"
+            placeholder="e.g., Development, Design, Testing..."
+            required
+            type="text"
           />
         </div>
 
         <!-- Priority -->
         <div>
-          <label for="priority" class="block text-sm font-semibold text-gray-900 mb-2">
+          <label class="block text-sm font-semibold text-gray-900 mb-2" for="priority">
             Priority <span class="text-red-500">*</span>
           </label>
           <select
-            id="priority"
             [(ngModel)]="taskForm.priority"
+            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition-all duration-200 text-sm bg-gray-50 hover:bg-white focus:bg-white"
+            id="priority"
             name="priority"
             required
-            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition-all duration-200 text-sm bg-gray-50 hover:bg-white focus:bg-white"
           >
             @for (priority of priorities; track priority) {
               <option [value]="priority">
-                {{priority}} Priority
+                {{ priority }} Priority
               </option>
             }
           </select>
@@ -107,34 +107,34 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Due Date -->
         <div>
-          <label for="dueDate" class="block text-sm font-semibold text-gray-900 mb-2">
+          <label class="block text-sm font-semibold text-gray-900 mb-2" for="dueDate">
             Due Date <span class="text-red-500">*</span>
           </label>
           <input
-            type="date"
-            id="dueDate"
             [(ngModel)]="taskForm.dueDate"
+            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition-all duration-200 text-sm bg-gray-50 hover:bg-white focus:bg-white"
+            id="dueDate"
             name="dueDate"
             required
-            class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition-all duration-200 text-sm bg-gray-50 hover:bg-white focus:bg-white"
+            type="date"
           />
         </div>
 
         <!-- Estimated Hours -->
         <div>
-          <label for="estimatedHours" class="block text-sm font-semibold text-gray-900 mb-2">
+          <label class="block text-sm font-semibold text-gray-900 mb-2" for="estimatedHours">
             Estimated Hours <span class="text-red-500">*</span>
           </label>
           <input
-            type="number"
-            id="estimatedHours"
             [(ngModel)]="taskForm.estimatedHours"
-            name="estimatedHours"
-            min="0.5"
-            step="0.5"
-            required
-            placeholder="1.0"
             class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition-all duration-200 text-sm bg-gray-50 hover:bg-white focus:bg-white"
+            id="estimatedHours"
+            min="0.5"
+            name="estimatedHours"
+            placeholder="1.0"
+            required
+            step="0.5"
+            type="number"
           />
         </div>
       </div>
@@ -142,22 +142,22 @@
       <!-- Action Buttons -->
       <div class="flex items-center justify-end space-x-3 pt-4 border-t border-gray-100">
         <button
-          type="button"
           (click)="onCancel()"
           class="px-6 py-3 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-xl transition-all duration-200 hover:shadow-sm transform hover:-translate-y-0.5"
+          type="button"
         >
           Cancel
         </button>
         <button
-          type="submit"
           class="px-6 py-3 text-sm font-medium text-white bg-gray-900 hover:bg-gray-800 rounded-xl transition-all duration-200 hover:shadow-md transform hover:-translate-y-0.5 flex items-center gap-2"
+          type="submit"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
+              d="M12 4v16m8-8H4"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M12 4v16m8-8H4"
             ></path>
           </svg>
           Add Task

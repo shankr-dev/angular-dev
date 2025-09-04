@@ -8,30 +8,31 @@
         <div class="flex items-center space-x-2 mb-2">
           <span
             class="px-2 py-1 bg-gray-100 text-gray-700 text-xs font-medium rounded-full border border-gray-200"
-            >{{ task.work }}</span
+          >{{ task.work }}</span
           >
           <span
-            class="px-2 py-1 text-xs font-medium rounded-full border"
             [ngClass]="getPriorityColor(task.priority)"
-            >{{ task.priority }} Priority</span
+            class="px-2 py-1 text-xs font-medium rounded-full border"
+          >{{ task.priority }} Priority</span
           >
         </div>
 
-      @if(!task.isCompleted) {
-        <button
-          (click)="completeTask()"
-          class="px-3 py-1.5 text-xs font-medium rounded-lg transition-colors duration-200 whitespace-nowrap bg-emerald-100 text-emerald-700 hover:bg-emerald-200"
-        >
-          Complete
-        </button>
-      }@if(task.isCompleted) {
-        <button
-          (click)="cancelTask()"
-          class="px-3 py-1.5 text-xs font-medium rounded-lg transition-colors duration-200 whitespace-nowrap bg-red-100 text-red-700 hover:bg-red-200"
-        >
-          Cancel
-        </button>
-      }
+        @if (!task.isCompleted) {
+          <button
+            (click)="completeTask()"
+            class="px-3 py-1.5 text-xs font-medium rounded-lg transition-colors duration-200 whitespace-nowrap bg-emerald-100 text-emerald-700 hover:bg-emerald-200"
+          >
+            Complete
+          </button>
+        }
+        @if (task.isCompleted) {
+          <button
+            (click)="cancelTask()"
+            class="px-3 py-1.5 text-xs font-medium rounded-lg transition-colors duration-200 whitespace-nowrap bg-red-100 text-red-700 hover:bg-red-200"
+          >
+            Cancel
+          </button>
+        }
       </div>
       <h4
         class="text-base font-semibold text-gray-900 mb-1.5 group-hover:text-gray-700 transition-colors duration-200"

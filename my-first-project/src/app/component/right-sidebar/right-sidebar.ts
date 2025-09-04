@@ -44,9 +44,9 @@ export class RightSidebarComponent {
       priority: taskForm.priority,
       dueDate: taskForm.dueDate,
       estimatedHours: taskForm.estimatedHours,
-      isCompleted: taskForm.isCompleted || false
+      isCompleted: taskForm.isCompleted || false,
     };
-    
+
     this.taskService.addTask(newTask);
   }
 }

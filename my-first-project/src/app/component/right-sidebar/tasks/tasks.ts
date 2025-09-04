@@ -22,10 +22,10 @@ export class TasksComponent {
   }
 
   onTaskCompleted(task: Task) {
-    this.taskService.updateTaskStatus(task.id, true)
+    this.taskService.updateTaskStatus(task.id, true);
   }
 
   onTaskCanceled(task: Task) {
-    this.taskService.updateTaskStatus(task.id, false)
+    this.taskService.updateTaskStatus(task.id, false);
   }
 }
