@@ -39,26 +39,6 @@
           </button>
         </div>
       </div>
-
-      <!-- Task Stats in Header -->
-      <div class="grid grid-cols-2 gap-3">
-        <button
-          (click)="setTaskFilter('completed')"
-          [class.ring-2]="taskFilter === 'completed'"
-          class="bg-white p-2.5 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer ring-emerald-600"
-        >
-          <div class="text-2xl font-bold text-emerald-600 mb-0.5">{{ completedTasks }}</div>
-          <div class="text-xs text-emerald-700 font-medium">Completed</div>
-        </button>
-        <button
-          (click)="setTaskFilter('pending')"
-          [class.ring-2]="taskFilter === 'pending'"
-          class="bg-white p-2.5 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer ring-orange-600"
-        >
-          <div class="text-2xl font-bold text-orange-600 mb-0.5">{{ pendingTasks }}</div>
-          <div class="text-xs text-gray-600 font-medium">Pending</div>
-        </button>
-      </div>
     }
   </div>
 
